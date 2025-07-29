@@ -5,6 +5,7 @@
   --dark: #2D2D2D;          /* Dark gray for text */
   --light: #F8F8F8;         /* Light background */
   --accent: #7A9CC6;        /* Soft blue for contrast */
+  --highlight: #F0FFF7;     /* Very light mint for backgrounds */
 }
 
 * {
@@ -25,7 +26,7 @@ body {
 .resume-container {
   max-width: 900px;
   margin: 2rem auto;
-  padding: 2rem;
+  padding: 2.5rem;
   background-color: white;
   box-shadow: 0 0 30px rgba(0,0,0,0.08);
 }
@@ -94,9 +95,10 @@ body {
 .experience-item {
   margin-bottom: 2rem;
   padding: 1.5rem;
-  background-color: var(--light);
+  background-color: var(--highlight);
   border-radius: 8px;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .experience-item:hover {
@@ -151,6 +153,28 @@ body {
   font-size: 1.4rem;
 }
 
+/* ===== Skills Section ===== */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-category {
+  background-color: white;
+  padding: 1.2rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.skill-category h4 {
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--light);
+  padding-bottom: 0.3rem;
+}
+
 /* ===== Responsive Design ===== */
 @media (max-width: 768px) {
   .resume-container {
@@ -174,5 +198,9 @@ body {
   
   .accomplishments li {
     padding-left: 1.5rem;
+  }
+  
+  .skills-container {
+    grid-template-columns: 1fr;
   }
 }
