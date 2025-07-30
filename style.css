@@ -16,33 +16,35 @@
 
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
+    line-height: 1.5;
     color: var(--lumberjack);
     background-color: var(--snow);
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" opacity="0.02"><path d="M100,100 C200,50 300,150 400,100 S500,50 600,100" fill="none" stroke="%233E2723" stroke-width="1.5" stroke-dasharray="2,4"/></svg>');
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 40px;
     position: relative;
     display: flex;
 }
 
 .skills-sidebar {
-    width: 250px;
-    padding: 2rem 1rem 2rem 0;
+    width: 300px;
+    padding: 2rem 1.5rem 2rem 0;
     position: relative;
+    flex-shrink: 0;
 }
 
 .skills-sidebar h2 {
     color: var(--pine);
     font-size: 1.6rem;
-    margin: 0 0 1rem 0;
+    margin: 0 0 1.5rem 0;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--birch);
+    border-bottom: 3px solid var(--lumberjack);
 }
 
 .main-content {
     flex: 1;
-    padding-left: 20px;
+    padding-left: 30px;
     border-left: 12px solid var(--lumberjack);
     position: relative;
 }
@@ -53,40 +55,20 @@ body {
     top: 120px;
     left: -12px;
     width: calc(100% + 12px);
-    height: 1px;
+    height: 3px;
     background: var(--lumberjack);
     z-index: 1;
 }
 
-.conversation-link {
-    margin-top: 2rem;
-    padding: 1rem;
-    background: var(--seafoam);
-    border-radius: 4px;
-    text-align: center;
-}
-
-.conversation-link a {
-    color: var(--pine);
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.conversation-link a:hover {
-    color: var(--lumberjack);
-    text-decoration: underline;
-}
-
 /* ===== STRIKING HEADER ===== */
 header {
-    padding: 2rem 2rem 1rem 0;
+    padding: 2rem 2rem 1.5rem 0;
 }
 
 h1 {
     font-size: 2.8rem;
     color: var(--pine);
-    margin: 0 0 0.2rem 0;
+    margin: 0 0 0.5rem 0;
     font-weight: 700;
     letter-spacing: -0.5px;
     line-height: 1.1;
@@ -95,8 +77,9 @@ h1 {
 .contact-cluster {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.5rem;
     margin-bottom: 0.5rem;
+    align-items: center;
 }
 
 .contact-item {
@@ -111,6 +94,23 @@ h1 {
     color: var(--seafoam);
     margin-right: 0.5rem;
     font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.contact-item a {
+    color: var(--pine);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: var(--seafoam);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.contact-item a:hover {
+    background-color: var(--pine);
+    color: white;
+    text-decoration: none;
 }
 
 /* ===== SECTION STYLES ===== */
@@ -127,7 +127,7 @@ section:hover {
 h2 {
     color: var(--pine);
     font-size: 1.6rem;
-    margin: 0 0 1rem 0;
+    margin: 0 0 1.5rem 0;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--birch);
     position: relative;
@@ -150,18 +150,18 @@ section:hover h2::after {
 
 /* ===== EXPERIENCE BLOCKS ===== */
 .job {
-    margin-bottom: 2rem;
-    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+    padding: 1.8rem;
     background: white;
-    border-radius: 4px;
+    border-radius: 6px;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(58, 87, 67, 0.05);
+    box-shadow: 0 3px 6px rgba(58, 87, 67, 0.08);
 }
 
 .job:hover {
     transform: translateY(-3px);
     box-shadow: 
-        0 5px 15px rgba(58, 87, 67, 0.1),
+        0 8px 20px rgba(58, 87, 67, 0.12),
         inset 0 0 0 1px var(--seafoam);
 }
 
@@ -169,13 +169,13 @@ section:hover h2::after {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
 }
 
 .job-title {
     font-weight: 600;
     color: var(--lumberjack);
-    font-size: 1.1rem;
+    font-size: 1.15rem;
 }
 
 .job-company {
@@ -185,7 +185,8 @@ section:hover h2::after {
 
 .job-date {
     color: var(--pine);
-    font-size: 0.95rem;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 ul {
@@ -195,8 +196,9 @@ ul {
 
 li {
     position: relative;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
     transition: transform 0.2s ease;
+    line-height: 1.5;
 }
 
 li:hover {
@@ -218,36 +220,46 @@ li:hover::before {
 /* ===== SKILLS SIDEBAR ===== */
 .skill-category {
     background: white;
-    padding: 1.2rem;
-    border-radius: 4px;
-    margin-bottom: 1rem;
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(58, 87, 67, 0.05);
+    box-shadow: 0 3px 6px rgba(58, 87, 67, 0.08);
 }
 
 .skill-category:hover {
     transform: translateY(-3px);
     box-shadow: 
-        0 5px 15px rgba(58, 87, 67, 0.1),
+        0 8px 20px rgba(58, 87, 67, 0.12),
         inset 0 0 0 1px var(--seafoam);
 }
 
 .skill-category h4 {
     color: var(--pine);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
     border-bottom: 1px solid var(--birch);
-    padding-bottom: 0.3rem;
+    padding-bottom: 0.4rem;
+    font-size: 1.1rem;
+}
+
+.skill-category li {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
 }
 
 /* ===== PRINT STYLES ===== */
 @media print {
     body {
         display: block !important;
-        padding: 0 0 0 10px !important;
+        padding: 0 0 0 20px !important;
         border-left: 8px solid var(--lumberjack) !important;
-        font-size: 12pt;
+        font-size: 11pt;
         background: white !important;
         background-image: none !important;
+        max-width: 100%;
     }
     
     .skills-sidebar {
@@ -274,42 +286,76 @@ li:hover::before {
     .job, .skill-category {
         box-shadow: none !important;
         break-inside: avoid;
+        padding: 1rem !important;
+    }
+    
+    .contact-item a {
+        background: none !important;
+        padding: 0 !important;
     }
 }
 
 /* ===== RESPONSIVE ADJUSTMENTS ===== */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     body {
         flex-direction: column;
-        padding: 0 0 0 10px;
+        padding: 0 20px;
     }
     
     .skills-sidebar {
         width: 100%;
-        padding: 1rem 0;
+        padding: 2rem 0 1rem 0;
         order: 1;
     }
     
     .main-content {
         border-left: 8px solid var(--lumberjack);
-        padding-left: 10px;
+        padding-left: 20px;
         order: 2;
     }
     
     h1 {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
+    }
+    
+    .contact-cluster {
+        flex-direction: row;
+        gap: 1rem;
+    }
+    
+    section {
+        padding-right: 0;
+    }
+    
+    .job {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 0 15px;
+    }
+    
+    h1 {
+        font-size: 2rem;
     }
     
     .contact-cluster {
         flex-direction: column;
+        align-items: flex-start;
         gap: 0.5rem;
     }
     
-    section {
-        padding-right: 1rem;
+    .job {
+        padding: 1.2rem;
     }
     
-    .job {
-        padding: 1rem;
+    .job-header {
+        flex-direction: column;
+    }
+    
+    .job-date {
+        margin-top: 0.3rem;
     }
 }
