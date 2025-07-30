@@ -3,190 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jay Bush - Resume</title>
-    <style>
-        /* Base Styles */
-        :root {
-            --deep-green: #1a3b2a;
-            --muted-green: #5a7d5a;
-            --warm-white: #f8f5f2;
-            --soft-gray: #e8e8e8;
-            --birch-bark: #f0ece4;
-            --snow-shadow: #d1d9d6;
-        }
-        
-        body {
-            font-family: 'Garamond', 'Georgia', serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: var(--warm-white);
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px;
-            position: relative;
-        }
-        
-        /* Greenhouse-inspired decorative elements */
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 150px;
-            height: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M30,10 Q50,0 70,10 L90,30 Q100,50 90,70 L70,90 Q50,100 30,90 L10,70 Q0,50 10,30 Z" fill="none" stroke="%231a3b2a" stroke-width="0.5" opacity="0.1"/></svg>');
-            background-repeat: repeat-y;
-            background-position: right top;
-            opacity: 0.05;
-            z-index: -1;
-        }
-        
-        /* Header Styles */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 30px;
-            border-bottom: 1px solid var(--soft-gray);
-            padding-bottom: 20px;
-        }
-        
-        .name-title {
-            flex: 2;
-        }
-        
-        h1 {
-            font-size: 2.4em;
-            color: var(--deep-green);
-            margin: 0;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-        
-        .contact-info {
-            text-align: right;
-            flex: 1;
-            font-style: normal;
-            color: var(--muted-green);
-        }
-        
-        /* Section Styles */
-        section {
-            margin-bottom: 30px;
-        }
-        
-        h2 {
-            color: var(--deep-green);
-            font-size: 1.4em;
-            border-bottom: 1px solid var(--soft-gray);
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-        
-        h3 {
-            margin: 20px 0 5px 0;
-            font-size: 1.1em;
-            color: var(--muted-green);
-        }
-        
-        h4 {
-            margin: 0;
-            font-size: 1em;
-            font-weight: normal;
-            font-style: italic;
-            color: #666;
-        }
-        
-        /* Experience Styles */
-        .experience {
-            margin-bottom: 25px;
-        }
-        
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-        }
-        
-        .job-title {
-            font-weight: bold;
-            color: var(--deep-green);
-        }
-        
-        .job-date {
-            color: #666;
-            font-style: italic;
-        }
-        
-        ul {
-            margin: 5px 0;
-            padding-left: 20px;
-        }
-        
-        li {
-            margin-bottom: 5px;
-        }
-        
-        /* Skills Section */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        
-        .skill-category {
-            flex: 1;
-            min-width: 200px;
-        }
-        
-        .skill-category h4 {
-            color: var(--muted-green);
-            margin-bottom: 5px;
-            border-bottom: 1px dotted var(--soft-gray);
-        }
-        
-        /* Subtle decorative elements */
-        .section-divider {
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--soft-gray), transparent);
-            margin: 30px 0;
-            border: none;
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            body {
-                padding: 20px;
-            }
-            
-            header {
-                flex-direction: column;
-            }
-            
-            .contact-info {
-                text-align: left;
-                margin-top: 10px;
-            }
-            
-            .job-header {
-                flex-direction: column;
-            }
-            
-            .job-date {
-                margin-top: 3px;
-            }
-        }
-    </style>
+    <title>Jay Bush — Housing Advocate and Recovery Coach</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="name-title">
-            <h1>Jay Bush</h1>
-        </div>
-        <div class="contact-info">
-            <div>(516) 244-2503</div>
-            <div>jasonjohnbush@gmail.com</div>
+        <h1>Jay Bush</h1>
+        <div class="contact-cluster">
+            <div class="contact-item">(516) 244-2503</div>
+            <div class="contact-item">jasonjohnbush@gmail.com</div>
+            <div class="contact-item">jasonjbush.github.io</div>
         </div>
     </header>
 
@@ -195,15 +21,16 @@
         <p>Highly accomplished and results-oriented social justice advocate with a proven track record in community organizing, program management, and policy advocacy. Demonstrates strong capabilities in systems analysis, client support, and ensuring compliance with multifaceted housing program requirements.</p>
     </section>
 
-    <hr class="section-divider">
-
     <section>
         <h2>Experience</h2>
         
-        <div class="experience">
+        <div class="job">
             <div class="job-header">
-                <span class="job-title">Systems Eligibility Specialist, Homeless Services Network, Orlando, FL</span>
-                <span class="job-date">May 2024 - Present</span>
+                <div>
+                    <span class="job-title">Systems Eligibility Specialist</span>, 
+                    <span class="job-company">Homeless Services Network, Orlando, FL</span>
+                </div>
+                <div class="job-date">May 2024 - Present</div>
             </div>
             <ul>
                 <li>Spearhead review of referrals for Supportive Housing, Rapid Rehousing, and challenge grant programs, ensuring adherence to federal, state, and municipal requirements, maintaining an active roster of over 250 youth and young adults enrolled in our programs.</li>
@@ -215,30 +42,39 @@
             </ul>
         </div>
         
-        <div class="experience">
+        <div class="job">
             <div class="job-header">
-                <span class="job-title">Part-Time Admissions Specialist, Rollover Rep</span>
-                <span class="job-date">August 2025 - Present</span>
+                <div>
+                    <span class="job-title">Part-Time Admissions Specialist</span>, 
+                    <span class="job-company">Rollover Rep</span>
+                </div>
+                <div class="job-date">August 2025 - Present</div>
             </div>
             <ul>
                 <li>Provide crisis support, resources and admissions counseling to people seeking treatment for substance use disorder while providing exceptional customer support.</li>
             </ul>
         </div>
         
-        <div class="experience">
+        <div class="job">
             <div class="job-header">
-                <span class="job-title">Research Fellow, Come Out With Pride, Orlando, FL</span>
-                <span class="job-date">October 2024 - March 2025</span>
+                <div>
+                    <span class="job-title">Research Fellow</span>, 
+                    <span class="job-company">Come Out With Pride, Orlando, FL</span>
+                </div>
+                <div class="job-date">October 2024 - March 2025</div>
             </div>
             <ul>
                 <li>Researched and contributed to technical solutions for LGBTQIA2S+ online community safety; developed informative community resources and built community stakeholder networks.</li>
             </ul>
         </div>
         
-        <div class="experience">
+        <div class="job">
             <div class="job-header">
-                <span class="job-title">Relationship Advisor, Addition Financial, Lake Mary, FL</span>
-                <span class="job-date">January 2023 - May 2024</span>
+                <div>
+                    <span class="job-title">Relationship Advisor</span>, 
+                    <span class="job-company">Addition Financial, Lake Mary, FL</span>
+                </div>
+                <div class="job-date">January 2023 - May 2024</div>
             </div>
             <ul>
                 <li>Delivered expert financial guidance and technical support to credit union members, resolving complex inquiries and facilitating transactions and providing financial education to members.</li>
@@ -247,10 +83,13 @@
             </ul>
         </div>
         
-        <div class="experience">
+        <div class="job">
             <div class="job-header">
-                <span class="job-title">Field Organizer, Hard Knocks Consulting, Statewide, FL</span>
-                <span class="job-date">August 2022 - December 2022</span>
+                <div>
+                    <span class="job-title">Field Organizer</span>, 
+                    <span class="job-company">Hard Knocks Consulting, Statewide, FL</span>
+                </div>
+                <div class="job-date">August 2022 - December 2022</div>
             </div>
             <ul>
                 <li>Recruited, trained, and managed high-performing canvasser teams, exceeding outreach goals.</li>
@@ -258,10 +97,13 @@
             </ul>
         </div>
         
-        <div class="experience">
+        <div class="job">
             <div class="job-header">
-                <span class="job-title">Career Break, Orlando, FL</span>
-                <span class="job-date">August 2020 – August 2022</span>
+                <div>
+                    <span class="job-title">Career Break</span>, 
+                    <span class="job-company">Orlando, FL</span>
+                </div>
+                <div class="job-date">August 2020 – August 2022</div>
             </div>
             <ul>
                 <li>Transitioned into recovery advocacy work following pandemic-related career disruption, developing specialized expertise in housing instability solutions and trauma-informed care.</li>
@@ -269,40 +111,52 @@
             </ul>
         </div>
         
-        <div class="experience">
+        <div class="job">
             <div class="job-header">
-                <span class="job-title">Support Specialist, Systopia International, Orlando, FL</span>
-                <span class="job-date">August 2019 - August 2020</span>
+                <div>
+                    <span class="job-title">Support Specialist</span>, 
+                    <span class="job-company">Systopia International, Orlando, FL</span>
+                </div>
+                <div class="job-date">August 2019 - August 2020</div>
             </div>
             <ul>
                 <li>Delivered mission-critical POS system support, including installation, configuration, and clients including Department of Defense (DoD) contractors and major fintech corporations.</li>
             </ul>
         </div>
         
-        <div class="experience">
+        <div class="job">
             <div class="job-header">
-                <span class="job-title">CNC Woodwork Fabricator, Milwork Sales, Orlando, FL</span>
-                <span class="job-date">2018 - 2019</span>
+                <div>
+                    <span class="job-title">CNC Woodwork Fabricator</span>, 
+                    <span class="job-company">Milwork Sales, Orlando, FL</span>
+                </div>
+                <div class="job-date">2018 - 2019</div>
             </div>
             <ul>
                 <li>Maintained, programmed, and operated CNC door assembly and class-carving machinery to assist the woodshop maintain an output of over 250 units daily.</li>
             </ul>
         </div>
         
-        <div class="experience">
+        <div class="job">
             <div class="job-header">
-                <span class="job-title">Associate Trainer, Convergys, Lake Mary, FL, Orlando, FL</span>
-                <span class="job-date">2016 - 2017</span>
+                <div>
+                    <span class="job-title">Associate Trainer</span>, 
+                    <span class="job-company">Convergys, Lake Mary, FL, Orlando, FL</span>
+                </div>
+                <div class="job-date">2016 - 2017</div>
             </div>
             <ul>
                 <li>Trained new hires for H&R Block software/online/retail client support; developed training materials and suggested process improvements for PayPal and Apple support accounts.</li>
             </ul>
         </div>
         
-        <div class="experience">
+        <div class="job">
             <div class="job-header">
-                <span class="job-title">Sr. II Customer Support Specialist, SANDATA, Port Washington, NY</span>
-                <span class="job-date">2012 - 2015</span>
+                <div>
+                    <span class="job-title">Sr. II Customer Support Specialist</span>, 
+                    <span class="job-company">SANDATA, Port Washington, NY</span>
+                </div>
+                <div class="job-date">2012 - 2015</div>
             </div>
             <ul>
                 <li>Provided Tier II technical support, troubleshooting complex issues (including EDI files, custom reports and COBOL-based systems) and performed UAT for new platforms/conversions.</li>
@@ -310,22 +164,29 @@
         </div>
     </section>
 
-    <hr class="section-divider">
-
     <section>
         <h2>Education</h2>
-        <h3>University of Illinois College of Law, IL</h3>
-        <h4>Juris Doctorate | High Honors: Legal Writing, DV Clinic</h4>
-        
-        <h3>Columbia University, NY, NY</h3>
-        <h4>Bachelors, Psychology | Varsity Lightweight Crew Team</h4>
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <span class="job-company">University of Illinois College of Law, IL</span>
+                </div>
+            </div>
+            <p>Juris Doctorate | High Honors: Legal Writing, DV Clinic</p>
+        </div>
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <span class="job-company">Columbia University, NY, NY</span>
+                </div>
+            </div>
+            <p>Bachelors, Psychology | Varsity Lightweight Crew Team</p>
+        </div>
     </section>
-
-    <hr class="section-divider">
 
     <section>
         <h2>Skills</h2>
-        <div class="skills-container">
+        <div class="skills-grid">
             <div class="skill-category">
                 <h4>Program & Policy Expertise</h4>
                 <ul>
@@ -363,11 +224,10 @@
         </div>
     </section>
 
-    <hr class="section-divider">
-
     <section>
         <h2>Volunteer Work</h2>
         <p>Food Equity: Remote kitchen support for meal share and community food programs through People's Free Kitchen and direct shelter drives</p>
+        <p>Volunteer crew coach for junior, high school, collegiate and pre-elite, and senior rowers</p>
     </section>
 </body>
 </html>
