@@ -20,81 +20,55 @@ body {
     color: var(--lumberjack);
     background-color: var(--snow);
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" opacity="0.02"><path d="M100,100 C200,50 300,150 400,100 S500,50 600,100" fill="none" stroke="%233E2723" stroke-width="1.5" stroke-dasharray="2,4"/></svg>');
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-    position: relative;
-    display: flex;
-}
-
-.skills-sidebar {
-    width: 300px;
-    padding: 2rem 1.5rem 2rem 0;
-    position: relative;
-    flex-shrink: 0;
-}
-
-.skills-sidebar h2 {
-    color: var(--pine);
-    font-size: 1.6rem;
-    margin: 0 0 1.5rem 0;
-    padding-bottom: 0.5rem;
-    border-bottom: 3px solid var(--lumberjack);
-}
-
-.main-content {
-    flex: 1;
-    padding-left: 30px;
-    border-left: 12px solid var(--lumberjack);
+    margin: 0;
+    padding-left: 40px;
     position: relative;
 }
 
-.main-content::before {
+.header-container {
+    position: relative;
+    padding: 30px 0 20px 0;
+    border-bottom: 12px solid var(--lumberjack);
+    margin-bottom: 20px;
+}
+
+.header-container::before {
     content: "";
     position: absolute;
-    top: 120px;
-    left: -12px;
-    width: calc(100% + 12px);
-    height: 3px;
+    bottom: -12px;
+    left: -40px;
+    width: 40px;
+    height: 12px;
     background: var(--lumberjack);
-    z-index: 1;
 }
 
-/* ===== STRIKING HEADER ===== */
-header {
-    padding: 2rem 2rem 1.5rem 0;
+.name-contact {
+    padding-left: 20px;
+    border-left: 12px solid var(--lumberjack);
+    position: relative;
 }
 
 h1 {
     font-size: 2.8rem;
     color: var(--pine);
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.8rem 0;
     font-weight: 700;
     letter-spacing: -0.5px;
     line-height: 1.1;
 }
 
-.contact-cluster {
+.contact-info {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-bottom: 0.5rem;
-    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .contact-item {
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: var(--pine);
     display: flex;
     align-items: center;
-}
-
-.contact-item::before {
-    content: "•";
-    color: var(--seafoam);
-    margin-right: 0.5rem;
-    font-weight: bold;
-    font-size: 1.2rem;
 }
 
 .contact-item a {
@@ -105,6 +79,7 @@ h1 {
     background-color: var(--seafoam);
     border-radius: 4px;
     transition: all 0.2s ease;
+    display: inline-block;
 }
 
 .contact-item a:hover {
@@ -113,10 +88,35 @@ h1 {
     text-decoration: none;
 }
 
+.content-container {
+    display: flex;
+    gap: 30px;
+    padding-right: 40px;
+}
+
+.skills-section {
+    width: 280px;
+    flex-shrink: 0;
+    padding-left: 20px;
+    border-left: 12px solid var(--lumberjack);
+    position: relative;
+}
+
+.skills-section h2 {
+    color: var(--pine);
+    font-size: 1.6rem;
+    margin: 0 0 1.5rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--birch);
+}
+
+.main-content {
+    flex: 1;
+}
+
 /* ===== SECTION STYLES ===== */
 section {
     margin-bottom: 2.5rem;
-    padding-right: 2rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -217,7 +217,7 @@ li:hover::before {
     color: var(--pine);
 }
 
-/* ===== SKILLS SIDEBAR ===== */
+/* ===== SKILLS SECTION ===== */
 .skill-category {
     background: white;
     padding: 1.5rem;
@@ -243,9 +243,9 @@ li:hover::before {
 }
 
 .skill-category li {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
     margin-bottom: 0.4rem;
     font-size: 0.95rem;
 }
@@ -253,26 +253,27 @@ li:hover::before {
 /* ===== PRINT STYLES ===== */
 @media print {
     body {
-        display: block !important;
         padding: 0 0 0 20px !important;
-        border-left: 8px solid var(--lumberjack) !important;
         font-size: 11pt;
         background: white !important;
         background-image: none !important;
-        max-width: 100%;
     }
     
-    .skills-sidebar {
+    .skills-section {
         display: none;
     }
     
-    .main-content {
-        border-left: none !important;
-        padding-left: 0 !important;
+    .header-container {
+        border-bottom: 8px solid var(--lumberjack) !important;
     }
     
-    .main-content::before {
-        display: none;
+    .header-container::before {
+        height: 8px;
+        bottom: -8px;
+    }
+    
+    .name-contact {
+        border-left: 8px solid var(--lumberjack) !important;
     }
     
     .contact-item::before {
@@ -298,19 +299,23 @@ li:hover::before {
 /* ===== RESPONSIVE ADJUSTMENTS ===== */
 @media (max-width: 900px) {
     body {
-        flex-direction: column;
-        padding: 0 20px;
+        padding-left: 20px;
     }
     
-    .skills-sidebar {
+    .content-container {
+        flex-direction: column;
+        padding-right: 20px;
+    }
+    
+    .skills-section {
         width: 100%;
-        padding: 2rem 0 1rem 0;
+        border-left: none;
+        padding-left: 0;
         order: 1;
+        margin-bottom: 2rem;
     }
     
     .main-content {
-        border-left: 8px solid var(--lumberjack);
-        padding-left: 20px;
         order: 2;
     }
     
@@ -318,13 +323,10 @@ li:hover::before {
         font-size: 2.4rem;
     }
     
-    .contact-cluster {
+    .contact-info {
         flex-direction: row;
+        flex-wrap: wrap;
         gap: 1rem;
-    }
-    
-    section {
-        padding-right: 0;
     }
     
     .job {
@@ -334,16 +336,15 @@ li:hover::before {
 
 @media (max-width: 600px) {
     body {
-        padding: 0 15px;
+        padding-left: 15px;
     }
     
     h1 {
         font-size: 2rem;
     }
     
-    .contact-cluster {
+    .contact-info {
         flex-direction: column;
-        align-items: flex-start;
         gap: 0.5rem;
     }
     
