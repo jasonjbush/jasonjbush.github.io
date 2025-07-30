@@ -1,11 +1,12 @@
-/* ===== Base Styles ===== */
+/* ===== Alpine Forest Theme ===== */
 :root {
-  --primary: #2B5F5B;       /* Deep mint green */
-  --secondary: #4FC3A1;     /* Bright mint accent */
-  --dark: #2D2D2D;          /* Dark gray for text */
-  --light: #F8F8F8;         /* Light background */
-  --accent: #7A9CC6;        /* Soft blue for contrast */
-  --highlight: #F0FFF7;     /* Very light mint for backgrounds */
+  --primary: #3A5F5B;       /* Deep alpine green */
+  --secondary: #7DBEAB;     /* Moss accent */
+  --dark: #2D2D2D;          /* Stone gray */
+  --light: #F5F9F7;         /* Birch white */
+  --accent: #94A8C6;        /* Frost blue */
+  --highlight: #F0F7F4;     /* Moss light */
+  --texture: url('data:image/svg+xml;utf8,<svg opacity="0.03" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M30,50 Q50,30 70,50 T90,50" fill="none" stroke="%232B5F5B" stroke-width="1"/></svg>');
 }
 
 * {
@@ -15,7 +16,7 @@
 }
 
 body {
-  font-family: 'Helvetica Now Display', Helvetica, Arial, sans-serif;
+  font-family: 'Source Sans 3', sans-serif;
   line-height: 1.6;
   color: var(--dark);
   background-color: white;
@@ -29,6 +30,7 @@ body {
   padding: 2.5rem;
   background-color: white;
   box-shadow: 0 0 30px rgba(0,0,0,0.08);
+  border: 1px solid rgba(125, 190, 171, 0.2);
 }
 
 /* ===== Header Styles ===== */
@@ -36,10 +38,12 @@ body {
   text-align: center;
   margin-bottom: 2.5rem;
   padding-bottom: 1.5rem;
+  background: linear-gradient(to right, var(--light), white);
   border-bottom: 3px solid var(--secondary);
 }
 
 .resume-header h1 {
+  font-family: 'Playfair Display', serif;
   font-size: 2.8rem;
   color: var(--primary);
   margin-bottom: 0.5rem;
@@ -84,11 +88,13 @@ body {
 
 .section-title {
   color: var(--primary);
+  font-family: 'Playfair Display', serif;
   font-size: 1.6rem;
   margin-bottom: 1.2rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--light);
-  font-weight: 700;
+  padding-bottom: 12px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="6" viewBox="0 0 120 6"><path d="M0,3 C20,6 40,0 60,3 S100,0 120,3" fill="none" stroke="%237DBEAB" stroke-width="1"/></svg>');
+  background-repeat: repeat-x;
+  background-position: bottom;
 }
 
 /* ===== Experience Styles ===== */
@@ -96,7 +102,9 @@ body {
   margin-bottom: 2rem;
   padding: 1.5rem;
   background-color: var(--highlight);
-  border-radius: 8px;
+  background-image: var(--texture);
+  border-left: 3px solid var(--secondary);
+  border-radius: 0 8px 8px 0;
   transition: all 0.3s ease;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
@@ -165,6 +173,7 @@ body {
   padding: 1.2rem;
   border-radius: 6px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  border: 1px solid rgba(125, 190, 171, 0.3);
 }
 
 .skill-category h4 {
@@ -173,6 +182,22 @@ body {
   font-size: 1.1rem;
   border-bottom: 1px solid var(--light);
   padding-bottom: 0.3rem;
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  body {
+    padding: 0;
+    font-size: 12pt;
+  }
+  .resume-container {
+    box-shadow: none;
+    margin: 0;
+    padding: 0.5in;
+  }
+  .experience-item {
+    break-inside: avoid;
+  }
 }
 
 /* ===== Responsive Design ===== */
