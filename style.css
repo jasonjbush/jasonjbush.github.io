@@ -1,12 +1,14 @@
-/* ===== Alpine Forest Theme ===== */
+/* ===== Greenhouse Winter Theme ===== */
 :root {
-  --primary: #3A5F5B;       /* Deep alpine green */
-  --secondary: #7DBEAB;     /* Moss accent */
-  --dark: #2D2D2D;          /* Stone gray */
-  --light: #F5F9F7;         /* Birch white */
-  --accent: #94A8C6;        /* Frost blue */
-  --highlight: #F0F7F4;     /* Moss light */
-  --texture: url('data:image/svg+xml;utf8,<svg opacity="0.03" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M30,50 Q50,30 70,50 T90,50" fill="none" stroke="%232B5F5B" stroke-width="1"/></svg>');
+  --primary: #1A3B2A;       /* Deep monstera leaf green */
+  --secondary: #5A7D5A;     /* Muted pothos green */
+  --dark: #2D2D2D;          /* Dark text */
+  --light: #F8F5F2;         /* Warm greenhouse white */
+  --accent: #94A8C6;        /* Frosted glass blue */
+  --highlight: #F0F7F4;     /* Light plant highlight */
+  --birch: #F0ECE4;         /* Birch bark color */
+  --texture: url('data:image/svg+xml;utf8,<svg opacity="0.03" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M30,10 Q50,0 70,10 L90,30 Q100,50 90,70 L70,90 Q50,100 30,90 L10,70 Q0,50 10,30 Z" fill="none" stroke="%231A3B2A" stroke-width="0.5"/></svg>');
+  --snow: rgba(255,255,255,0.8);
 }
 
 * {
@@ -16,11 +18,14 @@
 }
 
 body {
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
   color: var(--dark);
-  background-color: white;
+  background-color: var(--light);
   padding: 0;
+  background-image: 
+    linear-gradient(to bottom, var(--snow), transparent 20%),
+    var(--texture);
 }
 
 /* ===== Resume Container ===== */
@@ -29,45 +34,78 @@ body {
   margin: 2rem auto;
   padding: 2.5rem;
   background-color: white;
-  box-shadow: 0 0 30px rgba(0,0,0,0.08);
-  border: 1px solid rgba(125, 190, 171, 0.2);
+  box-shadow: 
+    0 0 30px rgba(0,0,0,0.08),
+    0 0 0 1px rgba(125, 190, 171, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.resume-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(to bottom right, transparent, var(--birch));
+  z-index: -1;
+  opacity: 0.3;
 }
 
 /* ===== Header Styles ===== */
 .resume-header {
-  text-align: center;
+  text-align: left;
   margin-bottom: 2.5rem;
   padding-bottom: 1.5rem;
-  background: linear-gradient(to right, var(--light), white);
-  border-bottom: 3px solid var(--secondary);
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.resume-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, var(--secondary), transparent);
 }
 
 .resume-header h1 {
   font-family: 'Playfair Display', serif;
   font-size: 2.8rem;
   color: var(--primary);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   font-weight: 700;
   letter-spacing: -0.5px;
+  line-height: 1.1;
 }
 
 .resume-header h2 {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   color: var(--dark);
-  margin-bottom: 1rem;
-  font-weight: 500;
+  font-weight: 400;
+  margin-bottom: 0;
 }
 
 .contact-info {
-  font-size: 1.1rem;
+  text-align: right;
+  font-size: 1rem;
   color: var(--dark);
   letter-spacing: 0.5px;
+  line-height: 1.6;
+  padding-top: 0.5rem;
 }
 
 .contact-info a {
   color: var(--primary);
   text-decoration: none;
   transition: all 0.3s ease;
+  display: block;
 }
 
 .contact-info a:hover {
@@ -91,27 +129,52 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 1.6rem;
   margin-bottom: 1.2rem;
-  padding-bottom: 12px;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="6" viewBox="0 0 120 6"><path d="M0,3 C20,6 40,0 60,3 S100,0 120,3" fill="none" stroke="%237DBEAB" stroke-width="1"/></svg>');
-  background-repeat: repeat-x;
-  background-position: bottom;
+  padding-bottom: 8px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, var(--primary), transparent);
 }
 
 /* ===== Experience Styles ===== */
 .experience-item {
   margin-bottom: 2rem;
   padding: 1.5rem;
-  background-color: var(--highlight);
+  background-color: white;
   background-image: var(--texture);
   border-left: 3px solid var(--secondary);
   border-radius: 0 8px 8px 0;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 
+    0 2px 5px rgba(0,0,0,0.03),
+    inset 0 0 0 1px rgba(125, 190, 171, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
 .experience-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 5px 15px rgba(0,0,0,0.08),
+    inset 0 0 0 1px rgba(125, 190, 171, 0.2);
+}
+
+.experience-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--secondary), var(--primary));
 }
 
 .job-header {
@@ -123,10 +186,12 @@ body {
 }
 
 .job-header h3 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--primary);
   margin-right: 0.5rem;
   font-weight: 600;
+  flex: 1;
+  min-width: 60%;
 }
 
 .job-title {
@@ -138,7 +203,7 @@ body {
 .date {
   color: var(--secondary);
   font-weight: 500;
-  margin-left: auto;
+  font-size: 0.95rem;
 }
 
 .accomplishments {
@@ -159,12 +224,13 @@ body {
   position: absolute;
   left: 0;
   font-size: 1.4rem;
+  top: -0.1rem;
 }
 
 /* ===== Skills Section ===== */
 .skills-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
 }
 
@@ -172,16 +238,43 @@ body {
   background-color: white;
   padding: 1.2rem;
   border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  border: 1px solid rgba(125, 190, 171, 0.3);
+  box-shadow: 
+    0 2px 5px rgba(0,0,0,0.03),
+    inset 0 0 0 1px rgba(125, 190, 171, 0.1);
+  transition: all 0.2s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 5px 10px rgba(0,0,0,0.05),
+    inset 0 0 0 1px rgba(125, 190, 171, 0.2);
 }
 
 .skill-category h4 {
   color: var(--primary);
   margin-bottom: 0.8rem;
   font-size: 1.1rem;
-  border-bottom: 1px solid var(--light);
+  border-bottom: 1px solid var(--birch);
   padding-bottom: 0.3rem;
+}
+
+/* ===== Education Section ===== */
+.education-item {
+  margin-bottom: 1.5rem;
+}
+
+.education-item h3 {
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin-bottom: 0.2rem;
+}
+
+.education-item h4 {
+  font-size: 1rem;
+  color: var(--dark);
+  font-weight: 400;
+  font-style: italic;
 }
 
 /* ===== Print Styles ===== */
@@ -189,11 +282,16 @@ body {
   body {
     padding: 0;
     font-size: 12pt;
+    background: white;
   }
   .resume-container {
     box-shadow: none;
     margin: 0;
     padding: 0.5in;
+    background: white;
+  }
+  .resume-container::before {
+    display: none;
   }
   .experience-item {
     break-inside: avoid;
@@ -206,6 +304,15 @@ body {
     padding: 1.5rem;
     margin: 0;
     box-shadow: none;
+  }
+  
+  .resume-header {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+  
+  .contact-info {
+    text-align: left;
   }
   
   .resume-header h1 {
