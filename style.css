@@ -1,0 +1,282 @@
+/* ===== CEDAR JAY: DARK ACADEMIC THEME ===== */
+:root {
+    /* New Palette: Dark, Sleek, Moody */
+    --bg-dark: #121212;       /* Very dark grey, almost black */
+    --card-bg: #1E1E1E;       /* Slightly lighter charcoal for cards */
+    --text-main: #E0E0E0;     /* Soft off-white for reading */
+    --text-muted: #A0A0A0;    /* Grey for secondary text */
+    --accent: #9D85BE;        /* Muted Amethyst (The Goth Pop) */
+    --accent-glow: #6e4e96;   /* Darker purple for hovers */
+    --border: #333333;        /* Subtle borders */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-main);
+    background-color: var(--bg-dark);
+    margin: 0;
+    padding-left: 40px;
+    position: relative;
+}
+
+/* ===== HEADER & HERO ===== */
+.header-container {
+    position: relative;
+    padding: 40px 0 30px 0;
+    border-bottom: 2px solid var(--accent); /* Slimmed down the chunky border */
+    margin-bottom: 30px;
+}
+
+.name-contact {
+    padding-left: 20px;
+    border-left: 6px solid var(--accent); /* Slimmer, purple accent */
+    position: relative;
+}
+
+h1 {
+    font-family: 'Merriweather', serif; /* Serif for authority */
+    font-size: 3rem;
+    color: #fff;
+    margin: 0 0 0.2rem 0;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
+.tagline {
+    font-family: 'Merriweather', serif;
+    font-style: italic;
+    color: var(--accent);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-item {
+    font-size: 1rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+}
+
+/* THE CONVERSATION BUTTON */
+.contact-item a.cta-button {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--accent-glow);
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.contact-item a.cta-button:hover {
+    background-color: var(--accent);
+    box-shadow: 0 0 15px rgba(157, 133, 190, 0.4); /* Glowing effect */
+    transform: translateY(-2px);
+}
+
+/* ===== LAYOUT ===== */
+.content-container {
+    display: flex;
+    gap: 40px;
+    padding-right: 40px;
+}
+
+.skills-section {
+    width: 300px;
+    flex-shrink: 0;
+    padding-left: 0; /* Removed border layout for cleaner look */
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* ===== HEADERS ===== */
+h2 {
+    font-family: 'Merriweather', serif;
+    color: #fff;
+    font-size: 1.8rem;
+    margin: 0 0 1.5rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 60px; /* Small accent line */
+    height: 1px;
+    background: var(--accent);
+}
+
+h4 {
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+/* ===== CARDS (JOBS) ===== */
+section {
+    margin-bottom: 3rem;
+}
+
+.job {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+}
+
+.job:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent); /* Purple border on hover */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.job-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+}
+
+.job-title {
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.job-company {
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.job-date {
+    color: var(--accent);
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: 'Merriweather', serif; /* Stylish dates */
+}
+
+/* LISTS & BULLETS */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.job ul {
+    padding-left: 10px;
+}
+
+.job li {
+    position: relative;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    color: var(--text-main);
+}
+
+.job li::before {
+    content: "•";
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+/* ===== SKILLS TAGS ===== */
+/* This converts the old lists into modern badges */
+.skill-category {
+    margin-bottom: 2rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-tags li {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--text-main);
+    transition: all 0.2s ease;
+}
+
+.skill-tags li:hover {
+    border-color: var(--accent);
+    background: var(--accent-glow);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    body {
+        padding-left: 20px;
+    }
+    
+    .content-container {
+        flex-direction: column;
+        padding-right: 20px;
+    }
+    
+    .skills-section {
+        width: 100%;
+        order: 2; /* Move skills below experience on mobile? Or keep top? */
+        margin-bottom: 2rem;
+    }
+    
+    .main-content {
+        order: 1;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .job {
+        padding: 1.5rem;
+    }
+    
+    .job-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
