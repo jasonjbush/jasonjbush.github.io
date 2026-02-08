@@ -1,13 +1,13 @@
-/* ===== CEDAR JAY: DARK ACADEMIC THEME ===== */
+/* ===== CEDAR JAY: TAIGA/NORDIC THEME ===== */
 :root {
-    /* New Palette: Dark, Sleek, Moody */
-    --bg-dark: #121212;       /* Very dark grey, almost black */
-    --card-bg: #1E1E1E;       /* Slightly lighter charcoal for cards */
-    --text-main: #E0E0E0;     /* Soft off-white for reading */
-    --text-muted: #A0A0A0;    /* Grey for secondary text */
-    --accent: #9D85BE;        /* Muted Amethyst (The Goth Pop) */
-    --accent-glow: #6e4e96;   /* Darker purple for hovers */
-    --border: #333333;        /* Subtle borders */
+    /* New Palette: Misty Forest, Deep Pine, Warm Resin */
+    --bg-dark: #1C2321;       /* Deepest Pine/Charcoal */
+    --card-bg: #2D3836;       /* Lighter Slate/Moss for cards */
+    --text-main: #EEF2F1;     /* Mist white - clear but soft */
+    --text-muted: #A8B8B5;    /* Fog grey for secondary text */
+    --accent: #D9A55B;        /* Warm Amber/Resin/Lantern Light */
+    --accent-glow: #8C6A48;   /* Darker amber for hovers */
+    --border: #404F4C;        /* Mossy border */
 }
 
 * {
@@ -24,35 +24,51 @@ body {
     margin: 0;
     padding-left: 40px;
     position: relative;
+    /* Subtle grain or gradient could go here, but keeping it clean */
 }
 
 /* ===== HEADER & HERO ===== */
 .header-container {
     position: relative;
     padding: 40px 0 30px 0;
-    border-bottom: 2px solid var(--accent); /* Slimmed down the chunky border */
+    border-bottom: 2px solid var(--accent);
     margin-bottom: 30px;
 }
 
 .name-contact {
     padding-left: 20px;
-    border-left: 6px solid var(--accent); /* Slimmer, purple accent */
+    border-left: 6px solid var(--accent);
     position: relative;
 }
 
 h1 {
-    font-family: 'Merriweather', serif; /* Serif for authority */
+    font-family: 'Merriweather', serif;
     font-size: 3rem;
     color: #fff;
-    margin: 0 0 0.2rem 0;
+    margin: 0 0 0.5rem 0;
     font-weight: 900;
     letter-spacing: -0.5px;
+}
+
+/* NEW: STATUS BADGE */
+.status-badge {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--bg-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 4px 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .tagline {
     font-family: 'Merriweather', serif;
     font-style: italic;
-    color: var(--accent);
+    color: var(--text-muted); /* Subtler tagline now that we have the badge */
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     font-weight: 300;
@@ -74,11 +90,11 @@ h1 {
 
 /* THE CONVERSATION BUTTON */
 .contact-item a.cta-button {
-    color: #fff;
-    font-weight: 600;
+    color: var(--bg-dark); /* Dark text on the amber button for contrast */
+    font-weight: 700;
     text-decoration: none;
     padding: 0.8rem 1.5rem;
-    background-color: var(--accent-glow);
+    background-color: var(--accent);
     border: 1px solid var(--accent);
     border-radius: 4px;
     transition: all 0.3s ease;
@@ -90,8 +106,9 @@ h1 {
 }
 
 .contact-item a.cta-button:hover {
-    background-color: var(--accent);
-    box-shadow: 0 0 15px rgba(157, 133, 190, 0.4); /* Glowing effect */
+    background-color: #fff;
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px rgba(217, 165, 91, 0.3);
     transform: translateY(-2px);
 }
 
@@ -105,7 +122,7 @@ h1 {
 .skills-section {
     width: 300px;
     flex-shrink: 0;
-    padding-left: 0; /* Removed border layout for cleaner look */
+    padding-left: 0;
 }
 
 .main-content {
@@ -115,7 +132,7 @@ h1 {
 /* ===== HEADERS ===== */
 h2 {
     font-family: 'Merriweather', serif;
-    color: #fff;
+    color: var(--text-main);
     font-size: 1.8rem;
     margin: 0 0 1.5rem 0;
     padding-bottom: 0.5rem;
@@ -128,7 +145,7 @@ h2::after {
     position: absolute;
     bottom: -1px;
     left: 0;
-    width: 60px; /* Small accent line */
+    width: 60px;
     height: 1px;
     background: var(--accent);
 }
@@ -151,15 +168,15 @@ section {
     margin-bottom: 2rem;
     padding: 2rem;
     background: var(--card-bg);
-    border-radius: 8px;
+    border-radius: 6px; /* Slightly softer corners */
     transition: all 0.3s ease;
     border: 1px solid var(--border);
 }
 
 .job:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent); /* Purple border on hover */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
 .job-header {
@@ -186,7 +203,7 @@ section {
     color: var(--accent);
     font-size: 0.95rem;
     font-weight: 600;
-    font-family: 'Merriweather', serif; /* Stylish dates */
+    font-family: 'Merriweather', serif;
 }
 
 /* LISTS & BULLETS */
@@ -216,7 +233,6 @@ ul {
 }
 
 /* ===== SKILLS TAGS ===== */
-/* This converts the old lists into modern badges */
 .skill-category {
     margin-bottom: 2rem;
 }
@@ -228,19 +244,18 @@ ul {
 }
 
 .skill-tags li {
-    background: var(--card-bg);
+    background: var(--bg-dark); /* Darker than card for contrast */
     border: 1px solid var(--border);
     padding: 5px 12px;
-    border-radius: 20px;
+    border-radius: 4px; /* More structured than round badges */
     font-size: 0.85rem;
-    color: var(--text-main);
+    color: var(--text-muted);
     transition: all 0.2s ease;
 }
 
 .skill-tags li:hover {
     border-color: var(--accent);
-    background: var(--accent-glow);
-    color: #fff;
+    color: var(--text-main);
     transform: translateY(-2px);
 }
 
@@ -257,7 +272,7 @@ ul {
     
     .skills-section {
         width: 100%;
-        order: 2; /* Move skills below experience on mobile? Or keep top? */
+        order: 2; 
         margin-bottom: 2rem;
     }
     
